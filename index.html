@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Di Nsw</title>
+    <meta name="description" content="Di Nsw براند ملابس شبابي يقدم تصميمات عصرية مستوحاة من أسلوب الحياة اليومي، تجمع بين البساطة والراحة والطابع المميز">
+    <meta name="keywords"
+        content="DINSW, دي ان اس دبليو, براند ملابس, ملابس شبابي, ستريت وير, ملابس مصرية, أزياء, ملابس كاجوال">
+    <meta name="author" content="Magdy Ziad">
+    <meta property="og:title" content="Di Nsw | Egyptian Youth Clothing Brand">
+    <meta property="og:site_name" content="Di Nsw">
+    <meta property="og:description" content="Di Nsw براند ملابس شبابي يقدم تصميمات عصرية مستوحاة من أسلوب الحياة اليومي، تجمع بين البساطة والراحة والطابع المميز">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ar_EG">
+    <meta property="og:image" content="images/Logo.jpeg">
+    <link rel="icon" href="images/icon.png">
+    <meta name="robots" content="index, follow">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"
+        integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="font-[cairo]">
+
+        <!-- Start Nav -->
+        <nav class="fixed left-0 right-0 top-0 px-8 py-4 bg-black text-white flex flex-col z-50">
+            <div class="flex flex-row-reverse items-center justify-between">
+                <!-- Logo -->
+                <a href="#" class="hover:text-red-600 duration-300">
+                    <h2 dir="ltr" class="text-3xl sm:text-4xl font-bold">Di Nsw</h2>
+                </a>
+                
+                <!-- Desktop Nav Links -->
+                <ul class="text-2xl font-bold hidden lg:flex gap-9 items-center">
+                    <li
+                        class="hover:text-red-600 duration-300 relative after:absolute after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[2.5px] after:bg-red-600 after:rounded-full after:duration-300 hover:after:w-full">
+                        <a href="#">الرئيسية</a>
+                    </li>
+                    <li
+                        class="hover:text-red-600 duration-300 relative after:absolute after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[2.5px] after:bg-red-600 after:rounded-full after:duration-300 hover:after:w-full">
+                        <a href="#">أحدث المنتجات</a>
+                    </li>
+                    <li
+                        class="hover:text-red-600 duration-300 relative after:absolute after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[2.5px] after:bg-red-600 after:rounded-full after:duration-300 hover:after:w-full">
+                        <a href="#">من نحن</a>
+                    </li>
+                    <li
+                        class="hover:text-red-600 duration-300 relative after:absolute after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[2.5px] after:bg-red-600 after:rounded-full after:duration-300 hover:after:w-full">
+                        <a href="#">تواصل معنا</a>
+                    </li>
+                </ul>
+                <!-- Cart & Mobile Nav Btn  -->
+                <div class="flex gap-2 items-center">
+                    <!-- Cart -->
+                    <a class="text-3xl hover:text-red-600 duration-300 relative" href="">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        <span
+                            class="absolute -right-3 text-2xl text-white -top-3 w-7 h-7 flex justify-center items-center p-1 rounded-full bg-red-600 ">0</span>
+                    </a>
+                
+                    <!-- Mobile Nav Btn -->
+                    <button id="mobileNavBtn" class="block lg:hidden cursor-pointer text-3xl border-r-2 pr-2 border-red-600">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Moblile Nav Links -->
+                <ul id="mobileNavContainer" class="hidden justify-start items-start lg:hidden flex-col w-full mt-8 pt-8 border-t-2 text-xl font-bold gap-9 pb-5">
+                    <li
+                        class="hover:text-red-600 duration-300 text-start">
+                        <a href="#">الرئيسية</a>
+                    </li>
+                    <li
+                        class="hover:text-red-600 duration-300 text-start">
+                        <a href="#">أحدث المنتجات</a>
+                    </li>
+                    <li
+                        class="hover:text-red-600 duration-300 text-start">
+                        <a href="#">من نحن</a>
+                    </li>
+                    <li
+                        class="hover:text-red-600 duration-300 text-start">
+                        <a href="#">تواصل معنا</a>
+                    </li>
+                </ul>
+        </nav>
+
+        <!-- Start Hero Section -->
+        <section class="relative h-screen bg-black flex flex-col gap-8 text-white justify-center items-center px-3">
+            <img src="images/hero.png" class="w-[500px] max-w-full" alt="Logo">
+            <h1 class="text-3xl text-center sm:text-5xl font-bold">مرحبا بك في <span class="text-red-600">Di Nsw</span></h1>
+            <p class="text-xl text-center sm:text-3xl font-semibold text-gray-300">ملابس أكثر تميزًا لأشخاص أكثر تميزًا.</p>
+            <button class="bg-red-600 text-xl sm:text-3xl font-bold p-3 rounded-lg cursor-pointer hover:bg-red-700 duration-300 flex items-center gap-1">
+                <span>استكشف الاحدث</span>
+                <i class="fa-solid fa-arrow-down animate-bounce"></i>
+            </button>
+        </section>
+
+        <script src="js/main.js"></script>
+</body>
+</html>
