@@ -1,16 +1,19 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Di Nsw</title>
-    <meta name="description" content="Di Nsw براند ملابس شبابي يقدم تصميمات عصرية مستوحاة من أسلوب الحياة اليومي، تجمع بين البساطة والراحة والطابع المميز">
+    <meta name="description"
+        content="Di Nsw براند ملابس شبابي يقدم تصميمات عصرية مستوحاة من أسلوب الحياة اليومي، تجمع بين البساطة والراحة والطابع المميز">
     <meta name="keywords"
         content="DINSW, دي ان اس دبليو, براند ملابس, ملابس شبابي, ستريت وير, ملابس مصرية, أزياء, ملابس كاجوال">
     <meta name="author" content="Magdy Ziad">
     <meta property="og:title" content="Di Nsw | Egyptian Youth Clothing Brand">
     <meta property="og:site_name" content="Di Nsw">
-    <meta property="og:description" content="Di Nsw براند ملابس شبابي يقدم تصميمات عصرية مستوحاة من أسلوب الحياة اليومي، تجمع بين البساطة والراحة والطابع المميز">
+    <meta property="og:description"
+        content="Di Nsw براند ملابس شبابي يقدم تصميمات عصرية مستوحاة من أسلوب الحياة اليومي، تجمع بين البساطة والراحة والطابع المميز">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ar_EG">
     <meta property="og:image" content="images/Logo.jpeg">
@@ -23,84 +26,208 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"
         integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Carousel Style Link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+
+    <!-- Carousel jQuery Link -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <style>
+        #pop-up-child::-webkit-scrollbar {
+            width: 7px;
+        }
+
+        #pop-up-child::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        #pop-up-child::-webkit-scrollbar-thumb {
+            background-color: rgba(220, 38, 38, 60%);
+            border-radius: 9999px;
+            min-height: 30px;
+            max-height: 10px;
+            z-index: -4;
+        }
+
+        #pop-up-child::-webkit-scrollbar-thumb:hover {
+            background-color: rgb(220, 38, 38);
+        }
+    </style>
 </head>
+
 <body class="font-[cairo]">
 
-        <!-- Start Nav -->
-        <nav class="fixed left-0 right-0 top-0 px-8 py-4 bg-black text-white flex flex-col z-50">
-            <div class="flex flex-row-reverse items-center justify-between">
-                <!-- Logo -->
-                <a href="#" class="hover:text-red-600 duration-300">
-                    <h2 dir="ltr" class="text-3xl sm:text-4xl font-bold">Di Nsw</h2>
-                </a>
-                
-                <!-- Desktop Nav Links -->
-                <ul class="text-2xl font-bold hidden lg:flex gap-9 items-center">
-                    <li
-                        class="hover:text-red-600 duration-300 relative after:absolute after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[2.5px] after:bg-red-600 after:rounded-full after:duration-300 hover:after:w-full">
-                        <a href="#">الرئيسية</a>
-                    </li>
-                    <li
-                        class="hover:text-red-600 duration-300 relative after:absolute after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[2.5px] after:bg-red-600 after:rounded-full after:duration-300 hover:after:w-full">
-                        <a href="#">أحدث المنتجات</a>
-                    </li>
-                    <li
-                        class="hover:text-red-600 duration-300 relative after:absolute after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[2.5px] after:bg-red-600 after:rounded-full after:duration-300 hover:after:w-full">
-                        <a href="#">من نحن</a>
-                    </li>
-                    <li
-                        class="hover:text-red-600 duration-300 relative after:absolute after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[2.5px] after:bg-red-600 after:rounded-full after:duration-300 hover:after:w-full">
-                        <a href="#">تواصل معنا</a>
-                    </li>
-                </ul>
-                <!-- Cart & Mobile Nav Btn  -->
-                <div class="flex gap-2 items-center">
-                    <!-- Cart -->
-                    <a class="text-3xl hover:text-red-600 duration-300 relative" href="">
-                        <i class="fa-solid fa-bag-shopping"></i>
-                        <span
-                            class="absolute -right-3 text-2xl text-white -top-3 w-7 h-7 flex justify-center items-center p-1 rounded-full bg-red-600 ">0</span>
-                    </a>
-                
-                    <!-- Mobile Nav Btn -->
-                    <button id="mobileNavBtn" class="block lg:hidden cursor-pointer text-3xl border-r-2 pr-2 border-red-600">
-                        <i class="fa-solid fa-bars"></i>
-                    </button>
+    <!-- POP UP Window -->
+    <div id="pop-up-container" class="fixed hidden inset-0 bg-black/50 justify-center items-center z-[999] p-3 sm:p-10">
+        <div id="pop-up-child"
+            class="w-full lg:w-[75%] max-h-[90vh] overflow-auto md:overflow-hidden bg-white rounded-2xl flex flex-col gap-2 py-5 ">
+            <!-- POP UP Controller -->
+            <div class="border-b-2 pb-4 border-gray-200">
+                <button
+                    id="close-pop-up"
+                    class="mr-4 focus:outline-none cursor-pointer text-red-600 p-[2px] hover:bg-red-600 hover:text-white hover:rotate-180 duration-500 text-3xl aspect-square rounded-sm bg-gray-100">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <!-- POP UP Contetnt -->
+            <div class="grid items-center grid-cols-1 md:grid-cols-2 gap-3 px-3 sm:px-8 py-6">
+                <div
+                    class="order-2 md:order-1 flex justify-center items-center md:justify-normal md:items-stretch flex-col gap-5 xl:gap-6">
+                    <h4 id="title" class="text-3xl font-bold">تيشرت اوفر سايز اسود</h4>
+                    <p id="desc" class="text-xl lg:text-2xl text-center md:text-start font-semibold text-gray-700">تيشرت اوفر سايز
+                        رمادي , افضل خامات القماش</p>
+                    <p class="text-2xl font-semibold text-gray-700">الخامة: <span id="material" class="">قطن 100%</span>
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <span class="text-2xl font-bold text-gray-900"> اختار اللون: </span>
+                        <div id="colors" class="flex items-center gap-3"></div>
+                    </div>
+                    <div class="flex items-center text-gray-700 text-xl sm:text-2xl font-semibold">
+                        <span>المقاسات المتاحة: </span>
+                        &nbsp;
+                        <p id="sizes-avaliable" class="text-red-600 text-lg sm:text-xl"></p>
+                    </div>
+                    <div class="flex items-center gap-2 text-2xl font-bold self-stretch">
+                        <span>اختار مقاسك:</span>
+                        <select id="sizes-select"
+                            class="text-2xl flex-1 border-[2px] px-3 border-gray-500 rounded-md font-semibold focus:outline-none">
+                        </select>
+                    </div>
+                    <p class="text-2xl font-bold">السعر: <span class="text-green-500" id="popUpPrice">300</span></p>
+                    <button
+                        id="addToCartBtn"
+                        class="bg-gradient-to-r self-stretch from-indigo-500 hover:shadow-2xl shadow-indigo-500 duration-300 to-purple-600 text-3xl font-bold text-white py-3 rounded-xl cursor-pointer">أضف إلى السلة</button>
+                </div>
+                <div class="aspect-square overflow-hidden rounded-xl order-1 md:order-2">
+                    <img id="popUpImg" src="" class="w-full object-top h-full object-cover" alt="">
                 </div>
             </div>
+        </div>
+    </div>
 
-            <!-- Moblile Nav Links -->
-                <ul id="mobileNavContainer" class="hidden justify-start items-start lg:hidden flex-col w-full mt-8 pt-8 border-t-2 text-xl font-bold gap-9 pb-5">
-                    <li
-                        class="hover:text-red-600 duration-300 text-start">
-                        <a href="#">الرئيسية</a>
-                    </li>
-                    <li
-                        class="hover:text-red-600 duration-300 text-start">
-                        <a href="#">أحدث المنتجات</a>
-                    </li>
-                    <li
-                        class="hover:text-red-600 duration-300 text-start">
-                        <a href="#">من نحن</a>
-                    </li>
-                    <li
-                        class="hover:text-red-600 duration-300 text-start">
-                        <a href="#">تواصل معنا</a>
-                    </li>
-                </ul>
-        </nav>
+    <!-- Start Nav -->
+    <nav id="nav" class="fixed left-0 right-0 top-0 px-8 py-4 bg-black text-white flex flex-col z-50">
+        <div class="flex flex-row-reverse items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="hover:text-red-600 duration-300">
+                <h2 dir="ltr" class="text-3xl sm:text-4xl font-bold">Di Nsw</h2>
+            </a>
 
-        <!-- Start Hero Section -->
-        <section class="relative h-screen bg-black flex flex-col gap-8 text-white justify-center items-center px-3">
-            <img src="images/hero.png" class="w-[500px] max-w-full" alt="Logo">
-            <h1 class="text-3xl text-center sm:text-5xl font-bold">مرحبا بك في <span class="text-red-600">Di Nsw</span></h1>
-            <p class="text-xl text-center sm:text-3xl font-semibold text-gray-300">ملابس أكثر تميزًا لأشخاص أكثر تميزًا.</p>
-            <button class="bg-red-600 text-xl sm:text-3xl font-bold p-3 rounded-lg cursor-pointer hover:bg-red-700 duration-300 flex items-center gap-1">
-                <span>استكشف الاحدث</span>
-                <i class="fa-solid fa-arrow-down animate-bounce"></i>
-            </button>
-        </section>
+            <!-- Desktop Nav Links -->
+            <ul class="text-2xl font-bold hidden lg:flex gap-9 items-center">
+                <li
+                    class="hover:text-red-600 duration-300 relative after:absolute after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[2.5px] after:bg-red-600 after:rounded-full after:duration-300 hover:after:w-full">
+                    <a href="#">الرئيسية</a>
+                </li>
+                <li
+                    class="hover:text-red-600 duration-300 relative after:absolute after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[2.5px] after:bg-red-600 after:rounded-full after:duration-300 hover:after:w-full">
+                    <a href="#latest-products">أحدث المنتجات</a>
+                </li>
+                <li
+                    class="hover:text-red-600 duration-300 relative after:absolute after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[2.5px] after:bg-red-600 after:rounded-full after:duration-300 hover:after:w-full">
+                    <a href="#">من نحن</a>
+                </li>
+                <li
+                    class="hover:text-red-600 duration-300 relative after:absolute after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[2.5px] after:bg-red-600 after:rounded-full after:duration-300 hover:after:w-full">
+                    <a href="#">تواصل معنا</a>
+                </li>
+            </ul>
+            <!-- Cart & Mobile Nav Btn  -->
+            <div class="flex gap-2 items-center">
 
-        <script src="js/main.js"></script>
+                <!-- Cart -->
+                <a class="text-3xl hover:text-red-600 duration-300 relative" href="">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span
+                        id="cartCounter"
+                        class="absolute -right-3 text-2xl text-white -top-3 w-7 h-7 flex justify-center items-center p-1 rounded-full bg-red-600 "></span>
+                </a>
+
+                <!-- Mobile Nav Btn -->
+                <button id="mobileNavBtn"
+                    class="block lg:hidden cursor-pointer text-3xl border-r-2 pr-2 border-red-600">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Moblile Nav Links -->
+        <ul id="mobileNavContainer"
+            class="hidden justify-start items-start lg:hidden flex-col w-full mt-8 pt-8 border-t-2 text-xl font-bold gap-9 pb-5">
+            <li class="hover:text-red-600 duration-300 text-start">
+                <a href="#">الرئيسية</a>
+            </li>
+            <li class="hover:text-red-600 duration-300 text-start">
+                <a href="#latest-products">أحدث المنتجات</a>
+            </li>
+            <li class="hover:text-red-600 duration-300 text-start">
+                <a href="#">من نحن</a>
+            </li>
+            <li class="hover:text-red-600 duration-300 text-start">
+                <a href="#">تواصل معنا</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Start Hero Section -->
+    <section class="relative h-screen bg-black flex flex-col gap-8 text-white justify-center items-center px-3">
+        <img src="images/hero.png" class="w-[500px] max-w-full" alt="Logo">
+        <h1 class="text-3xl text-center sm:text-5xl font-bold">مرحبا بك في <span class="text-red-600">Di Nsw</span></h1>
+        <p class="text-xl text-center sm:text-3xl font-semibold text-gray-300">ملابس أكثر تميزًا لأشخاص أكثر تميزًا.</p>
+        <a href="#latest-products"
+            class="bg-red-600 text-xl sm:text-3xl font-bold p-3 rounded-lg cursor-pointer hover:bg-red-700 duration-300 flex items-center gap-1">
+            <span>استكشف الاحدث</span>
+            <i class="fa-solid fa-arrow-down animate-bounce"></i>
+        </a>
+    </section>
+
+    <!-- Latest Products -->
+    <section id="latest-products" class="min-h-screen bg-gray-100 py-24 px-10">
+        <h3 class="text-3xl sm:text-5xl font-bold text-center">أحدث <span class="text-red-600">منتجاتنا</span></h3>
+        <div class="flex flex-col gap-16">
+            <!-- Best Sellers -->
+            <div>
+                <div class="flex justify-between mt-10">
+                    <h4 class="text-2xl sm:text-3xl font-bold">الأكثر طلباً</h4>
+                    <div class="flex gap-1 items-center">
+                        <div id="slick-next"
+                            class="custom-arrow next cursor-pointer w-[33px] h-[35px] flex items-center justify-center border-[1.4px] border-gray-300 rounded-r-lg hover:bg-gray-200 duration-300 ">
+                            <i class="fa-solid fa-angle-right text-lg"></i>
+                        </div>
+                        <div id="slick-prev"
+                            class="custom-arrow prev cursor-pointer w-[33px] h-[35px] flex items-center justify-center border-[1.4px] border-gray-300 rounded-l-lg hover:bg-gray-200 duration-300 ">
+                            <i class="fa-solid fa-angle-left text-lg"></i>
+                        </div>
+                    </div>
+                </div>
+                <div id="best-sellers-container" class="slider mt-8 -mx-2"></div>
+            </div>
+
+            <!-- special-offers -->
+            <div>
+                <div class="flex justify-between mt-10">
+                    <h4 class="text-2xl sm:text-3xl font-bold">خصومات مميزة</h4>
+                    <div class="flex gap-1 items-center">
+                        <div id="slick-offers-next"
+                            class="custom-arrow next cursor-pointer w-[33px] h-[35px] flex items-center justify-center border-[1.4px] border-gray-300 rounded-r-lg hover:bg-gray-200 duration-300 ">
+                            <i class="fa-solid fa-angle-right text-lg"></i>
+                        </div>
+                        <div id="slick-offers-prev"
+                            class="custom-arrow prev cursor-pointer w-[33px] h-[35px] flex items-center justify-center border-[1.4px] border-gray-300 rounded-l-lg hover:bg-gray-200 duration-300 ">
+                            <i class="fa-solid fa-angle-left text-lg"></i>
+                        </div>
+                    </div>
+                </div>
+                <div id="special-offers-container" class="offers-slider mt-8 -mx-2"></div>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        
+    </script>
+    <script type="module" src="js/main.js"></script>
 </body>
+
 </html>
