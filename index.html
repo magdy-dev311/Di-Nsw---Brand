@@ -53,8 +53,6 @@
         #pop-up-child::-webkit-scrollbar-thumb:hover {
             background-color: rgb(220, 38, 38);
         }
-
-        
     </style>
 </head>
 
@@ -92,14 +90,15 @@
                         <div id="colors"
                             class="grid grid-cols-2 lg:grid-cols-3 self-stretch gap-2 text-xl font-semibold text-gray-600 flex-1">
                         </div>
-                        
+
                     </div>
 
                     <div class="flex flex-col self-stretch gap-3">
                         <span class="text-2xl font-bold text-gray-900"> اختار المقاس: </span>
-                        <div id="sizes" class="grid grid-cols-4 self-stretch gap-2 text-xl font-semibold text-gray-600 flex-1">
+                        <div id="sizes"
+                            class="grid grid-cols-4 self-stretch gap-2 text-xl font-semibold text-gray-600 flex-1">
                         </div>
-                    
+
                     </div>
                     <p class="text-xl sm:text-2xl font-bold">السعر: <span class="text-green-500"
                             id="popUpPrice">300</span></p>
@@ -134,11 +133,11 @@
                 </li>
                 <li
                     class="hover:text-red-600 duration-300 relative after:absolute after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[2.5px] after:bg-red-600 after:rounded-full after:duration-300 hover:after:w-full">
-                    <a href="#">من نحن</a>
+                    <a href="#about-us">من نحن</a>
                 </li>
                 <li
                     class="hover:text-red-600 duration-300 relative after:absolute after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[2.5px] after:bg-red-600 after:rounded-full after:duration-300 hover:after:w-full">
-                    <a href="#">تواصل معنا</a>
+                    <a href="#contact-us">تواصل معنا</a>
                 </li>
             </ul>
             <!-- Cart & Mobile Nav Btn  -->
@@ -169,10 +168,10 @@
                 <a href="#latest-products">أحدث المنتجات</a>
             </li>
             <li class="hover:text-red-600 duration-300 text-start">
-                <a href="#">من نحن</a>
+                <a href="#about-us">من نحن</a>
             </li>
             <li class="hover:text-red-600 duration-300 text-start">
-                <a href="#">تواصل معنا</a>
+                <a href="#contact-us">تواصل معنا</a>
             </li>
         </ul>
     </nav>
@@ -230,6 +229,79 @@
             </div>
         </div>
     </section>
+
+    <section id="about-us" class="py-24 bg-red-50/50 px-3 md:px-10">
+        <h3 class="text-3xl sm:text-5xl font-bold text-center">من <span class="text-red-600">نحن</span></h3>
+        <div class="max-w-4xl mx-auto mt-5 sm:mt-12">
+            <p
+                class="text-lg sm:text-xl lg:text-2xl leading-10 text-center text-gray-600 bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+                <span class="font-bold text-red-600">Di Nsw</span>
+                براند ملابس شبابي مصري بيقدم تصميمات عصرية تناسب ستايلك في كل وقت. بنركز على البساطة، الراحة،
+                والتفاصيل اللي تخلي
+                كل قطعة سهلة تلبسها وتناسب يومك، سواء خروجة، جامعة، أو شغل.
+                <span class="text-red-600 font-bold">
+                    ملابس أكثر تميزًا لأشخاص أكثر تميزًا.
+                </span>
+            </p>
+        </div>
+    </section>
+    <!-- Contact Us -->
+    <section id="contact-us" class="py-24 bg-black text-white px-3 md:px-10">
+        <h3 class="text-3xl sm:text-5xl font-bold text-center">تواصل <span class="text-red-600">معنا</span></h3>
+        <p class="text-center text-gray-400 text-lg sm:text-xl mt-4">عندك سؤال أو استفسار؟ احنا هنا نساعدك</p>
+
+        <div class="max-w-5xl mx-auto mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div
+                class="bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col gap-3 items-center text-center hover:border-red-600 hover:-translate-y-1 duration-300">
+                <i class="fa-solid fa-phone text-3xl text-red-600"></i>
+                <span class="text-lg font-semibold text-gray-300">اتصل بنا</span>
+                <span dir="ltr" class="text-xl font-bold">+20 100 000 0000</span>
+            </div>
+            <div
+                class="bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col gap-3 items-center text-center hover:border-red-600 hover:-translate-y-1 duration-300">
+                <i class="fa-solid fa-envelope text-3xl text-red-600"></i>
+                <span class="text-lg font-semibold text-gray-300">الإيميل</span>
+                <span dir="ltr" class="text-xl font-bold break-all">info@dinsw.com</span>
+            </div>
+            <a
+                href="https://wa.me/201111252897"
+                target="_blank"
+                class="bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col gap-3 items-center text-center hover:border-red-600 hover:-translate-y-1 duration-300">
+                <i class="fa-brands fa-whatsapp text-3xl text-red-600"></i>
+                <span class="text-lg font-semibold text-gray-300">واتساب</span>
+                <span class="text-xl font-bold">01111252897</span>
+            </a>
+            <a href="https://www.instagram.com/anime_di_nsw?igsh=MW9qOWVyNnhyZnF6Zg==" target="_blank"
+                class="bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col gap-3 items-center text-center hover:border-red-600 hover:-translate-y-1 duration-300">
+                <i class="fa-brands fa-instagram text-3xl text-red-600"></i>
+                <span class="text-lg font-semibold text-gray-300">تابعنا</span>
+                <span dir="ltr" class="text-xl font-bold">@anime_di_nsw</span>
+            </a>
+        </div>
+        <div class="mt-14 rounded-lg overflow-hidden relative max-w-5xl mx-auto">
+            <img src="images/palestine.webp" alt="palastine">
+            <div class="absolute inset-0 flex items-center justify-center">
+                <p class="text-black text-2xl sm:text-4xl font-bold text-center px-4">
+                    فلسطين في <i class="fa-solid fa-heart text-red-600 animate-pulse"></i> القلب
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white border-t border-white/10 px-3 md:px-10 py-8">
+        <a href="https://magdyziad.vercel.app" target="_blank" class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p class="text-base sm:text-lg text-gray-400 text-center sm:text-start">
+                <i class="fa-regular fa-copyright"></i>2026 <span class="font-bold text-white">Di Nsw</span> | جميع الحقوق محفوظة
+            </p>
+            <p
+                class="text-base sm:text-lg font-semibold text-gray-400 hover:text-red-600 duration-300 text-center">
+                تصميم الموقع: المبرمج <span class="font-bold">مجدي زياد.</span>
+                اضغط للتواصل
+            </p>
+        </a>
+    </footer>
+
 
     <script type="module" src="js/main.js"></script>
 </body>

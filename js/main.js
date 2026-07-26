@@ -28,8 +28,6 @@ const addToCartBtn = document.getElementById("addToCartBtn")
 const popUpImg = document.getElementById("popUpImg")
 const popUpPrice = document.getElementById("popUpPrice")
 
-let selectedColor;
-
 mobileNavBtn.addEventListener("click", function () {
     if (mobileNavContainer.classList.contains("hidden")) {
         mobileNavContainer.classList.remove("hidden")
@@ -55,6 +53,7 @@ window.onscroll = () => {
 function renderBestSellerProducts() {
     let theStructure = ``
     bestSeller.forEach(p => {
+        let finalPrice = p.hasDiscount ? (p.price - (p.price * p.discount / 100)).toFixed(2) : p.price
         theStructure += `
             <div class="mx-2 flex flex-col">
                 <div class="aspect-square overflow-hidden rounded-xl relative group">
@@ -67,7 +66,7 @@ function renderBestSellerProducts() {
                 <div class="mt-2 flex flex-col gap-3">
                     <div class="flex flex-col gap-2 items-center px-3">
                         <h5 class="text-2xl font-bold">${p.name}</h5>
-                        <span class="text-2xl text-green-600 font-bold">EGP ${p.price}</span>
+                        <span class="text-2xl text-green-600 font-bold">EGP ${finalPrice}</span>
                     </div>
                     <button
                         data-id="${p.id}"
@@ -117,19 +116,20 @@ renderSpecialOffersProducts()
 function addToCart (id) {
     let product = products.find(p=>p.id===id)
     if (!product)return
+    let finalPrice = product.hasDiscount ? product.price - (product.price * product.discount / 100) : product.price
     popUpColors.innerHTML = ""
     popUpSizes.innerHTML = ""
     popUpImg.src = product.img
     popUpImg.alt = product.name
     popUpTitle.textContent = product.name
     popUpDesc.textContent = product.desc
-    popUpPrice.textContent = product.price
+    popUpPrice.textContent = finalPrice
     popUpMaterial.textContent = product.material
     for (let i = 0 ; i < product.colors.length ; i++ ) {
         popUpColors.innerHTML+=`
             <label
                 class="border-2 border-gray-200 rounded-xl p-3 cursor-pointer flex justify-between items-center transition-all duration-300 has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50 has-[:checked]:shadow-lg">
-                <input type="radio" name="color" value="${product.colors[i].name}" class="hidden">
+                <input type="radio" name="color" value="${product.colors[i].name}" class="hidden" ${i === 0 ? "checked" : ""}>
                 <span class="font-semibold">${product.colors[i].name}</span>
                 <span class="w-7 h-7 ${product.colors[i].name === "أبيض" ? "border-2 border-gray-300" : ""} rounded-full bg-[${product.colors[i].hex}]"></span>
             </label>
@@ -139,7 +139,7 @@ function addToCart (id) {
         popUpSizes.innerHTML += `
             <label
                 class="border-2 border-gray-200 rounded-xl p-3 cursor-pointer flex justify-center text-l items-center transition-all duration-300 has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50 has-[:checked]:shadow-lg">
-                <input type="radio" name="size" value="${product.sizes[i]}" class="hidden" checked>
+                <input type="radio" name="size" value="${product.sizes[i]}" class="hidden" ${i===0?"checked":""}>
                 <span class="font-semibold text-center">${product.sizes[i]}</span>
             </label>
         `
@@ -168,7 +168,7 @@ addToCartBtn.addEventListener("click", ()=>{
         material: popUpMaterial.textContent,
         color: document.querySelector("input[name='color']:checked").value,
         size: document.querySelector("input[name='size']:checked").value,
-        price: popUpPrice.textContent,
+        price: +popUpPrice.textContent,
         quantity: 1,
     }
     cart.push(newProduct)
