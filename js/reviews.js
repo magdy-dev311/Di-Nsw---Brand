@@ -84,9 +84,9 @@ function renderReviews () {
             `
         }
         reviewsContainer.innerHTML+=`
-            <div class="inline-block px-3 flex-shrink-0 cursor-pointer">
+            <div class="inline-block px-3 flex-shrink-0 cursor-pointer ">
                 <div
-                    class="bg-white flex flex-col gap-6 border-2 border-gray-200 rounded-2xl px-5 py-6 duration-300">
+                    class="bg-white flex flex-col gap-6 border-2 border-gray-200 rounded-2xl px-5 py-6 duration-300 hover:border-red-200">
                     <div class="flex gap-1 text-yellow-400 text-xl">
                         ${stars}
                     </div>
