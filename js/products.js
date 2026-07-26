@@ -8,11 +8,11 @@ let products = [
         sizes: ["M", "L", "XL", "2XL"],
         colors: [
             {
-                name: "black",
+                name: "أسود",
                 hex: "#000000"
             },
             {
-                name: "white",
+                name: "أبيض",
                 hex: "#FFFFFF"
             },
         ],
@@ -33,11 +33,11 @@ let products = [
         sizes: ["M","L", "XL", "2XL"],
         colors: [
             {
-                name: "black",
+                name: "أسود",
                 hex: "#000000"
             },
             {
-                name: "white",
+                name: "أبيض",
                 hex: "#FFFFFF"
             },
         ],
@@ -58,11 +58,11 @@ let products = [
         sizes: ["M","L", "XL", "2XL"],
         colors: [
             {
-                name: "black",
+                name: "أسود",
                 hex: "#000000"
             },
             {
-                name: "white",
+                name: "أبيض",
                 hex: "#FFFFFF"
             },
         ],
@@ -83,11 +83,11 @@ let products = [
         sizes: ["M","L", "XL", "2XL"],
         colors: [
             {
-                name: "black",
+                name: "أسود",
                 hex: "#000000"
             },
             {
-                name: "white",
+                name: "أبيض",
                 hex: "#FFFFFF"
             },
         ],
@@ -108,12 +108,16 @@ let products = [
         sizes: ["M","L"],
         colors: [
             {
-                name: "black",
+                name: "أسود",
                 hex: "#000000"
             },
             {
-                name: "white",
+                name: "أبيض",
                 hex: "#FFFFFF"
+            },
+            {
+                name: "رصاصي",
+                hex: "#6b7280"
             },
         ],
         desc: "تيشرت اوفر سايز اسود , افضل خامات القماش",

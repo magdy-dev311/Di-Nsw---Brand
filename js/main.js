@@ -23,8 +23,7 @@ const popUpTitle = document.getElementById("title")
 const popUpDesc = document.getElementById("desc")
 const popUpMaterial = document.getElementById("material")
 const popUpColors = document.getElementById("colors")
-const popUpsizesAvaliable = document.getElementById("sizes-avaliable")
-const popUpSizesSelect = document.getElementById("sizes-select")
+const popUpSizes = document.getElementById("sizes")
 const addToCartBtn = document.getElementById("addToCartBtn")
 const popUpImg = document.getElementById("popUpImg")
 const popUpPrice = document.getElementById("popUpPrice")
@@ -119,7 +118,7 @@ function addToCart (id) {
     let product = products.find(p=>p.id===id)
     if (!product)return
     popUpColors.innerHTML = ""
-    popUpSizesSelect.innerHTML = ""
+    popUpSizes.innerHTML = ""
     popUpImg.src = product.img
     popUpImg.alt = product.name
     popUpTitle.textContent = product.name
@@ -128,13 +127,21 @@ function addToCart (id) {
     popUpMaterial.textContent = product.material
     for (let i = 0 ; i < product.colors.length ; i++ ) {
         popUpColors.innerHTML+=`
-            <span data-color="${product.colors[i].name}" class="select-color-span w-8 h-8 rounded-full ${product.colors[i].name === "white"? "border-2 border-black" : ""} cursor-pointer bg-[${product.colors[i].hex}]"></span>
+            <label
+                class="border-2 border-gray-200 rounded-xl p-3 cursor-pointer flex justify-between items-center transition-all duration-300 has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50 has-[:checked]:shadow-lg">
+                <input type="radio" name="color" value="${product.colors[i].name}" class="hidden">
+                <span class="font-semibold">${product.colors[i].name}</span>
+                <span class="w-7 h-7 ${product.colors[i].name === "أبيض" ? "border-2 border-gray-300" : ""} rounded-full bg-[${product.colors[i].hex}]"></span>
+            </label>
         `
     }
-    popUpsizesAvaliable.textContent = product.sizes.join(" - ")
     for (let i = 0 ; i < product.sizes.length ; i++) {
-        popUpSizesSelect.innerHTML += `
-            <option value="${product.sizes[i]}">${product.sizes[i]}</option>
+        popUpSizes.innerHTML += `
+            <label
+                class="border-2 border-gray-200 rounded-xl p-3 cursor-pointer flex justify-center text-l items-center transition-all duration-300 has-[:checked]:border-indigo-600 has-[:checked]:bg-indigo-50 has-[:checked]:shadow-lg">
+                <input type="radio" name="size" value="${product.sizes[i]}" class="hidden" checked>
+                <span class="font-semibold text-center">${product.sizes[i]}</span>
+            </label>
         `
     }
     popUpContainer.classList.remove("hidden")
@@ -152,16 +159,6 @@ closePoPupBtn.addEventListener("click", () => {
     popUpContainer.classList.add("hidden")
 })
 
-document.addEventListener("click", (e) => {
-    let span = e.target.closest(".select-color-span")
-    if(!span)return
-    selectedColor = span.dataset.color
-    document.querySelectorAll(".select-color-span").forEach(s => {
-        s.classList.remove("outline-2", "outline-red-600")
-    })
-    span.classList.add("outline-2", "outline-red-600")
-})
-
 addToCartBtn.addEventListener("click", ()=>{
     let newProduct = {
         img: popUpImg.src,
@@ -169,8 +166,8 @@ addToCartBtn.addEventListener("click", ()=>{
         name: popUpTitle.textContent,
         desc: popUpDesc.textContent,
         material: popUpMaterial.textContent,
-        color: selectedColor,
-        size: popUpSizesSelect.value,
+        color: document.querySelector("input[name='color']:checked").value,
+        size: document.querySelector("input[name='size']:checked").value,
         price: popUpPrice.textContent,
         quantity: 1,
     }

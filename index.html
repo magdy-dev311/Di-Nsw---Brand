@@ -53,6 +53,8 @@
         #pop-up-child::-webkit-scrollbar-thumb:hover {
             background-color: rgb(220, 38, 38);
         }
+
+        
     </style>
 </head>
 
@@ -61,43 +63,49 @@
     <!-- POP UP Window -->
     <div id="pop-up-container" class="fixed hidden inset-0 bg-black/50 justify-center items-center z-[999] p-3 sm:p-10">
         <div id="pop-up-child"
-            class="w-full lg:w-[75%] max-h-[90vh] overflow-auto md:overflow-hidden bg-white rounded-2xl flex flex-col gap-2 py-5 ">
+            class="w-full lg:w-[75%] max-h-[95vh] overflow-auto md:overflow-hidden bg-white rounded-2xl flex flex-col gap-2 py-5 ">
             <!-- POP UP Controller -->
-            <div class="border-b-2 pb-4 border-gray-200">
-                <button
-                    id="close-pop-up"
-                    class="mr-4 focus:outline-none cursor-pointer text-red-600 p-[2px] hover:bg-red-600 hover:text-white hover:rotate-180 duration-500 text-3xl aspect-square rounded-sm bg-gray-100">
+            <div class="border-b-2 px-3 items-center sm:px-8 pb-4 border-gray-200 flex justify-between">
+                <h4 id="title" class="text-2xl text-center sm:text-start sm:text-3xl font-bold">تيشرت اوفر سايز اسود
+                </h4>
+                <button id="close-pop-up"
+                    class="mr-4 focus:outline-none cursor-pointer text-red-600 p-[2px] hover:bg-red-600 hover:text-white hover:rotate-180 duration-500 text-xl sm:text-3xl aspect-square rounded-sm bg-gray-100">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
             <!-- POP UP Contetnt -->
             <div class="grid items-center grid-cols-1 md:grid-cols-2 gap-3 px-3 sm:px-8 py-6">
                 <div
-                    class="order-2 md:order-1 flex justify-center items-center md:justify-normal md:items-stretch flex-col gap-5 xl:gap-6">
-                    <h4 id="title" class="text-3xl font-bold">تيشرت اوفر سايز اسود</h4>
-                    <p id="desc" class="text-xl lg:text-2xl text-center md:text-start font-semibold text-gray-700">تيشرت اوفر سايز
+                    class="order-2 md:order-1 flex justify-center items-center md:justify-normal md:items-stretch flex-col gap-6 lg:gap-5">
+                    <p id="desc" class="text-xl lg:text-2xl text-center md:text-start font-semibold text-gray-500">تيشرت
+                        اوفر سايز
                         رمادي , افضل خامات القماش</p>
-                    <p class="text-2xl font-semibold text-gray-700">الخامة: <span id="material" class="">قطن 100%</span>
-                    </p>
-                    <div class="flex items-center gap-3">
+                    <div class="bg-gray-50 px-3 py-2 self-stretch rounded-md flex justify-between items-center">
+                        <div class="flex flex-col">
+                            <span class="text-2xl font-semibold">الخامة</span>
+                            <span id="material" class="text-lg text-gray-700 font-medium"></span>
+                        </div>
+                        <i class="fa-solid fa-seedling text-3xl text-green-400"></i>
+                    </div>
+                    <div class="flex flex-col self-stretch gap-3">
                         <span class="text-2xl font-bold text-gray-900"> اختار اللون: </span>
-                        <div id="colors" class="flex items-center gap-3"></div>
+                        <div id="colors"
+                            class="grid grid-cols-2 lg:grid-cols-3 self-stretch gap-2 text-xl font-semibold text-gray-600 flex-1">
+                        </div>
+                        
                     </div>
-                    <div class="flex items-center text-gray-700 text-xl sm:text-2xl font-semibold">
-                        <span>المقاسات المتاحة: </span>
-                        &nbsp;
-                        <p id="sizes-avaliable" class="text-red-600 text-lg sm:text-xl"></p>
+
+                    <div class="flex flex-col self-stretch gap-3">
+                        <span class="text-2xl font-bold text-gray-900"> اختار المقاس: </span>
+                        <div id="sizes" class="grid grid-cols-4 self-stretch gap-2 text-xl font-semibold text-gray-600 flex-1">
+                        </div>
+                    
                     </div>
-                    <div class="flex items-center gap-2 text-2xl font-bold self-stretch">
-                        <span>اختار مقاسك:</span>
-                        <select id="sizes-select"
-                            class="text-2xl flex-1 border-[2px] px-3 border-gray-500 rounded-md font-semibold focus:outline-none">
-                        </select>
-                    </div>
-                    <p class="text-2xl font-bold">السعر: <span class="text-green-500" id="popUpPrice">300</span></p>
-                    <button
-                        id="addToCartBtn"
-                        class="bg-gradient-to-r self-stretch from-indigo-500 hover:shadow-2xl shadow-indigo-500 duration-300 to-purple-600 text-3xl font-bold text-white py-3 rounded-xl cursor-pointer">أضف إلى السلة</button>
+                    <p class="text-xl sm:text-2xl font-bold">السعر: <span class="text-green-500"
+                            id="popUpPrice">300</span></p>
+                    <button id="addToCartBtn"
+                        class="bg-gradient-to-r self-stretch from-indigo-500 hover:shadow-2xl shadow-indigo-500 duration-300 to-purple-600 text-xl sm:text-2xl font-bold text-white py-3 rounded-xl cursor-pointer">أضف
+                        إلى السلة <i class="fa-solid fa-bag-shopping"></i></button>
                 </div>
                 <div class="aspect-square overflow-hidden rounded-xl order-1 md:order-2">
                     <img id="popUpImg" src="" class="w-full object-top h-full object-cover" alt="">
@@ -139,9 +147,8 @@
                 <!-- Cart -->
                 <a class="text-3xl hover:text-red-600 duration-300 relative" href="">
                     <i class="fa-solid fa-bag-shopping"></i>
-                    <span
-                        id="cartCounter"
-                        class="absolute -right-3 text-2xl text-white -top-3 w-7 h-7 flex justify-center items-center p-1 rounded-full bg-red-600 "></span>
+                    <span id="cartCounter"
+                        class="absolute -right-3 text-xl text-white -top-3 w-7 h-7 flex justify-center items-center p-1 rounded-full bg-red-600 "></span>
                 </a>
 
                 <!-- Mobile Nav Btn -->
@@ -183,7 +190,7 @@
     </section>
 
     <!-- Latest Products -->
-    <section id="latest-products" class="min-h-screen bg-gray-100 py-24 px-10">
+    <section id="latest-products" class="min-h-screen bg-gray-100 py-24 px-3 md:px-10">
         <h3 class="text-3xl sm:text-5xl font-bold text-center">أحدث <span class="text-red-600">منتجاتنا</span></h3>
         <div class="flex flex-col gap-16">
             <!-- Best Sellers -->
@@ -223,7 +230,7 @@
             </div>
         </div>
     </section>
-    
+
     <script type="module" src="js/main.js"></script>
 </body>
 
