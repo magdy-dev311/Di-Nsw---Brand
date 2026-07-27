@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"
         integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="images/icon.png">
     <meta name="description" content="راجع المنتجات الموجودة في سلة التسوق وأكمل طلبك بسهولة مع Di Nsw.">
     <meta name="robots" content="noindex, nofollow">
 </head>
@@ -128,31 +129,39 @@
 
                 </div>
                 <!-- Order Now -->
-                <div
-                    class="bg-white rounded-xl shadow-md border border-gray-200 py-10 px-8 flex flex-col gap-6 lg:sticky lg:top-24 left-0">
-                    <h3 class="text-3xl font-bold border-b-2 border-b-gray-100 pb-5">الطلب</h3>
-                    <div class="flex flex-col gap-4 border-b-2 border-b-gray-100 pb-6">
-                        <div class="flex flex-row justify-between text-gray-600">
-                            <span class="text-xl font-semibold">عدد المنتجات</span>
-                            <span id="productsCount" class="text-xl font-medium">12</span>
+                <div class="flex flex-col gap-5 lg:sticky lg:top-24 left-0">
+                    <div
+                        class="bg-white rounded-xl shadow-md border border-gray-200 py-10 px-8 flex flex-col gap-6">
+                        <h3 class="text-3xl font-bold border-b-2 border-b-gray-100 pb-5">الطلب</h3>
+                        <div class="flex flex-col gap-4 border-b-2 border-b-gray-100 pb-6">
+                            <div class="flex flex-row justify-between text-gray-600">
+                                <span class="text-xl font-semibold">عدد المنتجات</span>
+                                <span id="productsCount" class="text-xl font-medium">12</span>
+                            </div>
+                            <div class="flex flex-row justify-between text-gray-600">
+                                <span class="text-xl font-semibold">الشحن</span>
+                                <span class="text-xl font-medium">EGP <span id="shippingCoast"></span></span>
+                            </div>
+                            <div class="flex flex-row justify-between text-gray-600">
+                                <span class="text-xl font-semibold">الإجمالي</span>
+                                <span class="text-xl font-bold text-green-600">EGP <span id="subTotal"></span></span>
+                            </div>
                         </div>
-                        <div class="flex flex-row justify-between text-gray-600">
-                            <span class="text-xl font-semibold">الشحن</span>
-                            <span class="text-xl font-medium">EGP <span id="shippingCoast"></span></span>
+                        <div class="flex flex-row justify-between">
+                            <span class="text-2xl font-bold">الإجمالي الكلي</span>
+                            <span class="text-2xl font-bold text-red-600">EGP <span id="total"></span></span>
                         </div>
-                        <div class="flex flex-row justify-between text-gray-600">
-                            <span class="text-xl font-semibold">الإجمالي</span>
-                            <span class="text-xl font-bold text-green-600">EGP <span id="subTotal"></span></span>
-                        </div>
+                        <button id="orderNow"
+                            class="bg-gradient-to-r hover:shadow-lg hover:shadow-purple-400 duration-300 from-indigo-500 text-white rounded-lg cursor-pointer to-purple-600 text-3xl font-bold py-3 text-center">
+                            إتمام الطلب <i class="fa-solid fa-credit-card"></i>
+                        </button>
                     </div>
-                    <div class="flex flex-row justify-between">
-                        <span class="text-2xl font-bold">الإجمالي الكلي</span>
-                        <span class="text-2xl font-bold text-red-600">EGP <span id="total"></span></span>
-                    </div>
-                    <button id="orderNow"
-                        class="bg-gradient-to-r hover:shadow-lg hover:shadow-purple-400 duration-300 from-indigo-500 text-white rounded-lg cursor-pointer to-purple-600 text-3xl font-bold py-3 text-center">
-                        إتمام الطلب <i class="fa-solid fa-credit-card"></i>
-                    </button>
+                    <a class="flex gap-2 self-end items-center cursor-pointer " href="index.html">
+                        <span class="text-2xl font-semibold text-gray-600 hover:text-red-600 duration-300">متابعة التسوق</span>
+                        <span class="w-8 h-8 text-white bg-red-600 text-xl rounded-full flex justify-center items-center">
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </span>
+                    </a>
                 </div>
             </div>
         </div>

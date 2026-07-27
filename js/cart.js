@@ -1,3 +1,5 @@
+const API_URL = "https://script.google.com/macros/s/AKfycbz2wkp4e3a26gDQkm8XdQafLizbEQkdpkhSo9w1zWnoQimnTH1X2Mpxu5Mp6Y3E7IarnQ/exec"
+
 let cart = JSON.parse(localStorage.getItem("cart")) || []
 const cartCounter = document.getElementById("cartCounter")
 cartCounter.textContent = cart.reduce((container, current) => { return container + current.quantity }, 0)
@@ -22,6 +24,17 @@ const addressInput = document.getElementById("addressInput")
 const totalInput = document.getElementById("totalInput")
 const mobileInput = document.getElementById("mobileInput")
 
+const nav = document.getElementById("nav")
+
+window.onscroll = () => {
+    if (scrollY > 60) {
+        nav.classList.remove("bg-black")
+        nav.classList.add("bg-white/10", "backdrop-blur-xl", "shadow-xl", "border-b", "border-white/20",)
+    } else {
+        nav.classList.remove("bg-white/10", "backdrop-blur-xl", "shadow-xl", "border-b", "border-white/20",)
+        nav.classList.add("bg-black")
+    }
+}
 
 function renderProducts() {
     let structure = ``
@@ -181,6 +194,34 @@ document.forms[0].addEventListener("submit", function (e) {
 
         الاجمالي: ${totalInput.value}
 `)
+
+    let productsText = cart.map(product => `
+        المنتج: ${product.name}
+        اللون: ${product.color}
+        المقاس: ${product.size}
+        السعر: ${product.price} EGP
+        الكمية: ${product.quantity}
+        -------------------------
+    `).join("\n");
+
+    let orderData = {
+        name: nameInput.value.trim(),
+        mobilePhone: mobileInput.value.trim(),
+        governorate: selectGov.value,
+        center: centerInput.value.trim(),
+        address: addressInput.value.trim(),
+        totalPrice: totalInput.value,
+        products: productsText
+    }
+
+    fetch(API_URL, {
+        method: "post",
+        mode: "no-cors",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(orderData)
+    })
 
     window.open(`https://wa.me/201111252897?text=${msg}`)
 
