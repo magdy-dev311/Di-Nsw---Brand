@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سلة المشتريات | Di Nsw</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"
+        integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="description" content="راجع المنتجات الموجودة في سلة التسوق وأكمل طلبك بسهولة مع Di Nsw.">
+    <meta name="robots" content="noindex, nofollow">
+</head>
+
+<body class="font-[cairo]">
+
+    <div id="popUpContainer"
+        class="hidden fixed inset-0 bg-black/50 z-[9999999999] justify-center items-center px-3 sm:px-5 py-8">
+        <form id="popUpForm" class="w-full md:w-[70%] px-3 sm:px-5 py-8 bg-white rounded-2xl flex flex-col gap-5 sm:gap-8">
+            <div class="border-b-3 border-b-gray-100 pb-6 flex justify-between">
+                <h3
+                    class="bg-gradient-to-r from-indigo-500 to-purple-600 bg-clip-text text-transparent text-2xl sm:text-3xl font-bold text-center">
+                    بيانات حضرتك هنا يا فندم</h3>
+                <button type="button" id="close-pop-up"
+                        class="mr-4 focus:outline-none cursor-pointer text-black/30 p-[2px] hover:bg-red-600 hover:text-white hover:rotate-180 duration-500 text-xl sm:text-3xl aspect-square rounded-sm bg-red-50">
+                        <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="relative">
+                <input type="text" required
+                    id="nameInput"
+                    class="text-xl sm:text-2xl font-semibold w-full focus:outline-purple-300 border-2 px-3 py-3 border-gray-100 rounded-md"
+                    placeholder="اسم حضرتك هنا يا فندم">
+            </div>
+            <div class="relative mt-3">
+                <select id="selectGov" type="text" required
+                    class="text-xl sm:text-2xl font-semibold w-full focus:outline-purple-300 border-2 px-3 py-3 border-gray-100 rounded-md">
+                    <option selected="selected">الغربية</option>
+                    <option>الإسكندرية</option>
+                    <option>الإسماعيلية</option>
+                    <option>كفر الشيخ</option>
+                    <option>أسوان</option>
+                    <option>أسيوط</option>
+                    <option>الأقصر</option>
+                    <option>الوادي الجديد</option>
+                    <option>شمال سيناء</option>
+                    <option>البحيرة</option>
+                    <option>بني سويف</option>
+                    <option>بورسعيد</option>
+                    <option>البحر الأحمر</option>
+                    <option>الجيزة</option>
+                    <option>الدقهلية</option>
+                    <option>جنوب سيناء</option>
+                    <option>دمياط</option>
+                    <option>سوهاج</option>
+                    <option>السويس</option>
+                    <option>الشرقية</option>
+                    <option>الغربية</option>
+                    <option>الفيوم</option>
+                    <option>القاهرة</option>
+                    <option>القليوبية</option>
+                    <option>قنا</option>
+                    <option>مطروح</option>
+                    <option>المنوفية</option>
+                    <option>المنيا</option>
+                </select>
+                <span class="absolute right-3 top-0 -translate-y-1/2 bg-white text-2xl text-gray-500">المحافظة</span>
+            </div>
+            <div class="relative">
+                <input type="text" required
+                    id="centerInput"
+                    class="text-xl sm:text-2xl font-semibold w-full focus:outline-purple-300 border-2 px-3 py-3 border-gray-100 rounded-md"
+                    placeholder="المركز">
+            </div>
+            <div class="relative">
+                <input type="text" required
+                    id="addressInput"
+                    class="text-xl sm:text-2xl font-semibold w-full focus:outline-purple-300 border-2 px-3 py-3 border-gray-100 rounded-md"
+                    placeholder="العنوان بالتفصيل">
+            </div>
+            <div class="flex flex-col items-stretch sm:flex-row  sm:items-center gap-5 sm:gap-3 mt-3">
+                <div class="relative">
+                    <input disabled type="text" required
+                        id="totalInput"
+                        class="text-xl sm:text-2xl font-semibold w-full focus:outline-purple-300 border-2 px-3 py-3 border-gray-100 rounded-md"
+                        placeholder="">
+                    <span class="absolute  right-3 top-0 -translate-y-1/2 bg-white text-2xl text-gray-500">الإجمالي</span>
+                </div>
+                <button type="submit" class="bg-gradient-to-r hover:shadow-lg  hover:shadow-purple-600 duration-300 from-indigo-500 to-purple-600 text-center py-3 text-2xl text-white flex-1 font-bold rounded-md cursor-pointer">اطلب الان</button>
+            </div>
+        </form>
+    </div>
+
+    <nav id="nav" class="fixed left-0 right-0 top-0 px-8 py-4 bg-black text-white flex flex-col z-50">
+        <div class="flex flex-row items-center justify-between">
+            <!-- Logo -->
+            <a class="text-3xl hover:text-red-600 duration-300 relative" href="">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span id="cartCounter"
+                    class="absolute -right-3 text-xl text-white -top-3 w-7 h-7 flex justify-center items-center p-1 rounded-full bg-red-600 "></span>
+            </a>
+
+            <a href="index.html" class="hover:text-red-600 duration-300">
+                <h2 dir="ltr" class="text-3xl sm:text-4xl font-bold">Di Nsw</h2>
+            </a>
+
+
+        </div>
+    </nav>
+
+    <!-- Orders Section -->
+    <section class="min-h-screen bg-gray-100 p-3 sm:p-15 py-14  ">
+        <h3 class="text-4xl sm:text-5xl font-bold text-center mt-16">سلة <span class="text-red-600">مشترياتك</span></h3>
+        <div id="container" class="">
+            <div class="grid grid-cols-1 gap-10 lg:grid-cols-3 mt-14 items-start relative">
+                <div id="productsContainer"
+                    class=" lg:col-span-2 bg-white rounded-xl shadow-md border border-gray-200 flex flex-col gap-6 py-10 px-4 sm:px-8">
+
+                </div>
+                <!-- Order Now -->
+                <div
+                    class="bg-white rounded-xl shadow-md border border-gray-200 py-10 px-8 flex flex-col gap-6 lg:sticky lg:top-24 left-0">
+                    <h3 class="text-3xl font-bold border-b-2 border-b-gray-100 pb-5">الطلب</h3>
+                    <div class="flex flex-col gap-4 border-b-2 border-b-gray-100 pb-6">
+                        <div class="flex flex-row justify-between text-gray-600">
+                            <span class="text-xl font-semibold">عدد المنتجات</span>
+                            <span id="productsCount" class="text-xl font-medium">12</span>
+                        </div>
+                        <div class="flex flex-row justify-between text-gray-600">
+                            <span class="text-xl font-semibold">الشحن</span>
+                            <span class="text-xl font-medium">EGP <span id="shippingCoast"></span></span>
+                        </div>
+                        <div class="flex flex-row justify-between text-gray-600">
+                            <span class="text-xl font-semibold">الإجمالي</span>
+                            <span class="text-xl font-bold text-green-600">EGP <span id="subTotal"></span></span>
+                        </div>
+                    </div>
+                    <div class="flex flex-row justify-between">
+                        <span class="text-2xl font-bold">الإجمالي الكلي</span>
+                        <span class="text-2xl font-bold text-red-600">EGP <span id="total"></span></span>
+                    </div>
+                    <button id="orderNow"
+                        class="bg-gradient-to-r hover:shadow-lg hover:shadow-purple-400 duration-300 from-indigo-500 text-white rounded-lg cursor-pointer to-purple-600 text-3xl font-bold py-3 text-center">
+                        إتمام الطلب <i class="fa-solid fa-credit-card"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Contact Us -->
+    <section id="contact-us" class="py-24 bg-black text-white px-3 md:px-10">
+        <h3 class="text-3xl sm:text-5xl font-bold text-center">تواصل <span class="text-red-600">معنا</span></h3>
+        <p class="text-center text-gray-400 text-lg sm:text-xl mt-4">عندك سؤال أو استفسار؟ احنا هنا نساعدك</p>
+
+        <div class="max-w-5xl mx-auto mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div
+                class="bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col gap-3 items-center text-center hover:border-red-600 hover:-translate-y-1 duration-300">
+                <i class="fa-solid fa-phone text-3xl text-red-600"></i>
+                <span class="text-lg font-semibold text-gray-300">اتصل بنا</span>
+                <span dir="ltr" class="text-xl font-bold">+20 100 000 0000</span>
+            </div>
+            <div
+                class="bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col gap-3 items-center text-center hover:border-red-600 hover:-translate-y-1 duration-300">
+                <i class="fa-solid fa-envelope text-3xl text-red-600"></i>
+                <span class="text-lg font-semibold text-gray-300">الإيميل</span>
+                <span dir="ltr" class="text-xl font-bold break-all">info@dinsw.com</span>
+            </div>
+            <a href="https://wa.me/201111252897" target="_blank"
+                class="bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col gap-3 items-center text-center hover:border-red-600 hover:-translate-y-1 duration-300">
+                <i class="fa-brands fa-whatsapp text-3xl text-red-600"></i>
+                <span class="text-lg font-semibold text-gray-300">واتساب</span>
+                <span class="text-xl font-bold">01111252897</span>
+            </a>
+            <a href="https://www.instagram.com/anime_di_nsw?igsh=MW9qOWVyNnhyZnF6Zg==" target="_blank"
+                class="bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col gap-3 items-center text-center hover:border-red-600 hover:-translate-y-1 duration-300">
+                <i class="fa-brands fa-instagram text-3xl text-red-600"></i>
+                <span class="text-lg font-semibold text-gray-300">تابعنا</span>
+                <span dir="ltr" class="text-xl font-bold">@anime_di_nsw</span>
+            </a>
+        </div>
+        <div class="mt-14 rounded-lg overflow-hidden relative max-w-5xl mx-auto">
+            <img src="images/palestine.webp" alt="palastine">
+            <div class="absolute inset-0 flex items-center justify-center">
+                <p class="text-black text-2xl sm:text-4xl font-bold text-center px-4">
+                    فلسطين في <i class="fa-solid fa-heart text-red-600 animate-pulse"></i> القلب
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white border-t border-white/10 px-3 md:px-10 py-8">
+        <a href="https://magdyziad.vercel.app" target="_blank"
+            class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p class="text-base sm:text-lg text-gray-400 text-center sm:text-start">
+                <i class="fa-regular fa-copyright"></i>2026 <span class="font-bold text-white">Di Nsw</span> | جميع
+                الحقوق محفوظة
+            </p>
+            <p class="text-base sm:text-lg font-semibold text-gray-400 hover:text-red-600 duration-300 text-center">
+                تصميم الموقع: المبرمج <span class="font-bold">مجدي زياد.</span>
+                اضغط للتواصل
+            </p>
+        </a>
+    </footer>
+    <script src="js/cart.js"></script>
+</body>
+
+</html>
