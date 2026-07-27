@@ -86,7 +86,7 @@ function renderProducts() {
             total += p.price * p.quantity
         })
         productsContainer.innerHTML = structure
-        productsCount.textContent = cart.reduce((container, current) => {return container + current.quantity},0)
+        productsCount.textContent = cart.reduce((container, current) => { return container + current.quantity }, 0)
         subTotal.textContent = total
         shippingCoast.textContent = orderCount
         totalSpan.textContent = total + orderCount
@@ -169,6 +169,8 @@ document.forms[0].addEventListener("submit", function (e) {
 
         *المنتجات*:
 
+------------------------------
+
         ${products}
 
         الاجمالي: ${totalInput.value}
@@ -181,15 +183,19 @@ document.forms[0].addEventListener("submit", function (e) {
     popUpContainer.classList.add("hidden");
     popUpContainer.classList.remove("flex");
 
-    localStorage.clear()
-    renderProducts()
+    cart = [];
+    localStorage.removeItem("cart");
+
+    renderProducts();
+
+    cartCounter.textContent = 0;
 
 })
 
 function deleteProduct(id) {
-    if (!confirm("هل انت متاكد من إزالة هذا العنصر"))return
+    if (!confirm("هل انت متاكد من إزالة هذا العنصر")) return
     cart = cart.filter(p => p.id !== id)
-    localStorage.setItem("cart",JSON.stringify(cart))
+    localStorage.setItem("cart", JSON.stringify(cart))
     renderProducts()
     cartCounter.textContent = cart.reduce((container, current) => { return container + current.quantity }, 0)
 }
