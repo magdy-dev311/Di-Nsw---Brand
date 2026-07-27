@@ -20,6 +20,7 @@ const selectGov = document.getElementById("selectGov")
 const centerInput = document.getElementById("centerInput")
 const addressInput = document.getElementById("addressInput")
 const totalInput = document.getElementById("totalInput")
+const mobileInput = document.getElementById("mobileInput")
 
 
 function renderProducts() {
@@ -132,7 +133,8 @@ document.forms[0].addEventListener("submit", function (e) {
     if (
         !nameInput.value.trim() ||
         !centerInput.value.trim() ||
-        !addressInput.value.trim()
+        !addressInput.value.trim() ||
+        !mobileInput.value.trim()
     ) {
         alert("من فضلك ادخل كل الحقول")
         return
@@ -141,25 +143,29 @@ document.forms[0].addEventListener("submit", function (e) {
     let products = ``
     for (let i = 0; i < cart.length; i++) {
         products += `
-*اسم المنتج*: ${cart[i].name}
+*المنتج:* ${cart[i].name}
 
-*لون المنتج*: ${cart[i].color}
+*اللون:* ${cart[i].color}
 
-*مقاس المنتج*: ${cart[i].size}
+*المقاس:* ${cart[i].size}
 
-*سعر المنتج*: ${cart[i].price}
+*السعر:* ${cart[i].price}
 
-*الكمية*: ${cart[i].quantity}
+*العدد:* ${cart[i].quantity}
 
-*سعر المنتج بعد اضافة الكمية:*: ${(cart[i].price * cart[i].quantity)}
+*الاجمالي:* ${(cart[i].price * cart[i].quantity)}
 
-------------------------------
+━━━━━━━━━━━━━━━━━━━━━━
 
 `
     }
 
     let msg = encodeURIComponent(`*طلب جديد*
+
+
         *الاسم*: ${nameInput.value.trim()}
+
+        *رقم الموبايل*: ${mobileInput.value.trim()}
 
         *المحافظة*: ${selectGov.value}
 
@@ -169,7 +175,7 @@ document.forms[0].addEventListener("submit", function (e) {
 
         *المنتجات*:
 
-------------------------------
+━━━━━━━━━━━━━━━━━━━━━━
 
         ${products}
 

@@ -20,11 +20,11 @@
 
     <div id="popUpContainer"
         class="hidden fixed inset-0 bg-black/50 z-[9999999999] justify-center items-center px-3 sm:px-5 py-8">
-        <form id="popUpForm" class="w-full md:w-[70%] px-3 sm:px-5 py-8 bg-white rounded-2xl flex flex-col gap-5 sm:gap-8">
+        <form id="popUpForm" class="w-full md:w-[70%] px-3 sm:px-5 py-8 bg-white rounded-2xl flex flex-col gap-4 sm:gap-5">
             <div class="border-b-3 border-b-gray-100 pb-6 flex justify-between">
                 <h3
                     class="bg-gradient-to-r from-indigo-500 to-purple-600 bg-clip-text text-transparent text-2xl sm:text-3xl font-bold text-center">
-                    بيانات حضرتك هنا يا فندم</h3>
+                    اتمام الطلب</h3>
                 <button type="button" id="close-pop-up"
                         class="mr-4 focus:outline-none cursor-pointer text-black/30 p-[2px] hover:bg-red-600 hover:text-white hover:rotate-180 duration-500 text-xl sm:text-3xl aspect-square rounded-sm bg-red-50">
                         <i class="fa-solid fa-xmark"></i>
@@ -34,7 +34,13 @@
                 <input type="text" required
                     id="nameInput"
                     class="text-xl sm:text-2xl font-semibold w-full focus:outline-purple-300 border-2 px-3 py-3 border-gray-100 rounded-md"
-                    placeholder="اسم حضرتك هنا يا فندم">
+                    placeholder="الاسم">
+            </div>
+            <div class="relative">
+                <input type="text" required
+                    id="mobileInput"
+                    class="text-xl sm:text-2xl font-semibold w-full focus:outline-purple-300 border-2 px-3 py-3 border-gray-100 rounded-md"
+                    placeholder="رقم الموبايل">
             </div>
             <div class="relative mt-3">
                 <select id="selectGov" type="text" required
