@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جميع المنتجات | Di Nsw</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"
+        integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="images/icon.png">
+    <meta name="description"
+        content="تصفح جميع منتجات Di Nsw من الملابس الشبابية العصرية، بما في ذلك التيشيرتات، الهوديز، والبناطيل بخامات عالية الجودة وتصاميم مميزة مع توصيل لجميع محافظات مصر.">
+</head>
+
+<body class="font-[Cairo] bg-gray-100">
+    <div id="pop-up-container" class="fixed hidden inset-0 bg-black/50 justify-center items-center z-[999] p-3 sm:p-10">
+        <div id="pop-up-child"
+            class="w-full lg:w-[75%] max-h-[95vh] overflow-auto md:overflow-hidden bg-white rounded-2xl flex flex-col gap-2 py-5 ">
+            <!-- POP UP Controller -->
+            <div class="border-b-2 px-3 items-center sm:px-8 pb-4 border-gray-200 flex justify-between">
+                <h4 id="title" class="text-2xl text-center sm:text-start sm:text-3xl font-bold">تيشرت اوفر سايز اسود
+                </h4>
+                <button id="close-pop-up"
+                    class="mr-4 focus:outline-none cursor-pointer text-red-600 p-[2px] hover:bg-red-600 hover:text-white hover:rotate-180 duration-500 text-xl sm:text-3xl aspect-square rounded-sm bg-gray-100">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <!-- POP UP Contetnt -->
+            <div class="grid items-center grid-cols-1 md:grid-cols-2 gap-3 px-3 sm:px-8 py-6">
+                <div
+                    class="order-2 md:order-1 flex justify-center items-center md:justify-normal md:items-stretch flex-col gap-6 lg:gap-5">
+                    <p id="desc" class="text-xl lg:text-2xl text-center md:text-start font-semibold text-gray-500">تيشرت
+                        اوفر سايز
+                        رمادي , افضل خامات القماش</p>
+                    <div class="bg-gray-50 px-3 py-2 self-stretch rounded-md flex justify-between items-center">
+                        <div class="flex flex-col">
+                            <span class="text-2xl font-semibold">الخامة</span>
+                            <span id="material" class="text-lg text-gray-700 font-medium"></span>
+                        </div>
+                        <i class="fa-solid fa-seedling text-3xl text-green-400"></i>
+                    </div>
+                    <div class="flex flex-col self-stretch gap-3">
+                        <span class="text-2xl font-bold text-gray-900"> اختار اللون: </span>
+                        <div id="colors"
+                            class="grid grid-cols-2 lg:grid-cols-3 self-stretch gap-2 text-xl font-semibold text-gray-600 flex-1">
+                        </div>
+    
+                    </div>
+    
+                    <div class="flex flex-col self-stretch gap-3">
+                        <span class="text-2xl font-bold text-gray-900"> اختار المقاس: </span>
+                        <div id="sizes"
+                            class="grid grid-cols-4 self-stretch gap-2 text-xl font-semibold text-gray-600 flex-1">
+                        </div>
+    
+                    </div>
+                    <p class="text-xl sm:text-2xl font-bold">السعر: <span class="text-green-500" id="popUpPrice">300</span>
+                    </p>
+                    <button id="addToCartBtn"
+                        class="bg-gradient-to-r self-stretch from-indigo-500 hover:shadow-2xl shadow-indigo-500 duration-300 to-purple-600 text-xl sm:text-2xl font-bold text-white py-3 rounded-xl cursor-pointer">أضف
+                        إلى السلة <i class="fa-solid fa-bag-shopping"></i></button>
+                </div>
+                <div class="aspect-square overflow-hidden rounded-xl order-1 md:order-2">
+                    <img id="popUpImg" src="" class="w-full object-top h-full object-cover" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <header class="bg-black">
+        <nav id="nav" class="fixed left-0 bg-black right-0 top-0 px-8 py-4 text-white flex flex-col z-50">
+            <div class="flex flex-row-reverse items-center justify-between">
+                <!-- Logo -->
+                <a href="index.html" class="hover:text-red-600 duration-300">
+                    <h2 dir="ltr" class="text-3xl sm:text-4xl font-bold">Di Nsw</h2>
+                </a>
+
+                <!-- Cart -->
+                <a class="text-3xl hover:text-red-600 duration-300 relative" href="cart.html">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span id="cartCounter"
+                        class="absolute -right-3 text-xl text-white -top-3 w-7 h-7 flex justify-center items-center p-1 rounded-full bg-red-600 "></span>
+                </a>
+        </nav>
+        <div class="bg-black text-white pt-32 pb-14 px-3 md:px-10">
+            <h1 class="text-3xl sm:text-5xl font-bold text-center">كل <span class="text-red-600">منتجاتنا</span></h1>
+            <p class="text-center text-gray-400 text-lg sm:text-xl mt-4">ابحث وفلتر لحد ما تلاقي القطعة اللي تناسبك</p>
+        </div>
+    </header>
+
+    <section class="min-h-screen  py-14 px-4 lg::px-8 ">
+        <div class="grid grid-cols-1 gap-3 xl:gap-6 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 items-start relative">
+            <div
+                class="bg-white rounded-lg shadow-md border border-gray-200 flex flex-col gap-4 px-4 py-8 md:sticky md:top-24 md:right-0">
+                <div class="flex items-center gap-3 text-2xl sm:text-3xl font-bold pb-5 border-b-2 border-b-gray-100">
+                    <i class="fa-solid fa-sliders text-red-600"></i>
+                    <h2>تصفية المنتجات</h2>
+                </div>
+                <div class="flex flex-col gap-5 pb-5 border-b-2 border-b-gray-100">
+                    <div class="flex items-center gap-2 text-2xl text-gray-700 font-semibold">
+                        <i class="fa-solid fa-credit-card text-red-600"></i>
+                        <h3>السعر</h3>
+                    </div>
+                    <div class="relative w-full h-6">
+                        <input step="50" id="minRangeInput" type="range" min="" max="" value="0"
+                            class="absolute z-20 w-full appearance-none bg-transparent pointer-events-none [&::-webkit-slider-thumb]:pointer-events-auto [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-red-600 [&::-webkit-slider-thumb]:border-2 [&::-webkit-slider-thumb]:border-white [&::-webkit-slider-thumb]:cursor-pointer">
+                        <input step="50" id="maxRangeInput" type="range" min="" max="" value="2000"
+                            class="absolute z-20 w-full appearance-none bg-transparent pointer-events-none [&::-webkit-slider-thumb]:pointer-events-auto [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-red-600 [&::-webkit-slider-thumb]:border-2 [&::-webkit-slider-thumb]:border-white [&::-webkit-slider-thumb]:cursor-pointer">
+                        <div class="absolute top-1/2 -translate-y-1/2 w-full h-1 bg-zinc-700 rounded-full"></div>
+                        <div id="progress" class="absolute top-1/2 -translate-y-1/2 h-1 bg-red-600 rounded-full"></div>
+                    </div>
+                    <div class="flex justify-between items-center text-lg font-semibold text-gray-500">
+                        <span>من: <span id="rangeFrom"></span></span>
+                        <span>الى: <span id="rangeTo"></span></span>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-5 pb-5 border-b-2 border-b-gray-100">
+                    <div class="flex items-center gap-2 flex-wrap text-2xl text-gray-700 font-semibold">
+                        <i class="fa-solid fa-shirt text-red-600"></i>
+                        <h3>المقاس</h3>
+                    </div>
+                    <div id="sizesInputsContainer" class="flex items-center gap-2"></div>
+                </div>
+                <div class="flex flex-col gap-5 pb-5 border-b-2 border-b-gray-100">
+                    <div class="flex items-center gap-2 text-2xl text-gray-700 font-semibold">
+                        <i class="fa-solid fa-palette text-red-600"></i>
+                        <h3>اللون</h3>
+                    </div>
+                    <div id="colorsContainer" class="flex items-center gap-2">
+
+                    </div>
+                </div>
+                <button id="clearFilter" class="text-2xl font-bold text-red-600 cursor-pointer flex gap-2 mt-2 items-center">
+                    <i class="fa-solid fa-rotate-left"></i>
+                    <span>مسح الفلترة</span>
+                </button>
+            </div>
+
+            <div id="productsContainer"
+                class="col-span-1 md:col-span-2 xl:col-span-3 bg-white rounded-lg shadow-md border border-gray-200 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-20 px-5 py-6">
+            </div>
+        </div>
+    </section>
+
+    <section id="contact-us" class="py-24 bg-black text-white px-3 md:px-10">
+        <h3 class="text-3xl sm:text-5xl font-bold text-center">تواصل <span class="text-red-600">معنا</span></h3>
+        <p class="text-center text-gray-400 text-lg sm:text-xl mt-4">عندك سؤال أو استفسار؟ احنا هنا نساعدك</p>
+
+        <div class="max-w-5xl mx-auto mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div
+                class="bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col gap-3 items-center text-center hover:border-red-600 hover:-translate-y-1 duration-300">
+                <i class="fa-solid fa-phone text-3xl text-red-600"></i>
+                <span class="text-lg font-semibold text-gray-300">اتصل بنا</span>
+                <span dir="ltr" class="text-xl font-bold">+20 100 000 0000</span>
+            </div>
+            <div
+                class="bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col gap-3 items-center text-center hover:border-red-600 hover:-translate-y-1 duration-300">
+                <i class="fa-solid fa-envelope text-3xl text-red-600"></i>
+                <span class="text-lg font-semibold text-gray-300">الإيميل</span>
+                <span dir="ltr" class="text-xl font-bold break-all">info@dinsw.com</span>
+            </div>
+            <a href="https://wa.me/201111252897" target="_blank"
+                class="bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col gap-3 items-center text-center hover:border-red-600 hover:-translate-y-1 duration-300">
+                <i class="fa-brands fa-whatsapp text-3xl text-red-600"></i>
+                <span class="text-lg font-semibold text-gray-300">واتساب</span>
+                <span class="text-xl font-bold">01111252897</span>
+            </a>
+            <a href="https://www.instagram.com/anime_di_nsw?igsh=MW9qOWVyNnhyZnF6Zg==" target="_blank"
+                class="bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col gap-3 items-center text-center hover:border-red-600 hover:-translate-y-1 duration-300">
+                <i class="fa-brands fa-instagram text-3xl text-red-600"></i>
+                <span class="text-lg font-semibold text-gray-300">تابعنا</span>
+                <span dir="ltr" class="text-xl font-bold">@anime_di_nsw</span>
+            </a>
+        </div>
+        <div class="mt-14 rounded-lg overflow-hidden relative max-w-5xl mx-auto">
+            <img src="images/palestine.webp" alt="palastine">
+            <div class="absolute inset-0 flex items-center justify-center">
+                <p class="text-black text-2xl sm:text-4xl font-bold text-center px-4">
+                    فلسطين في <i class="fa-solid fa-heart text-red-600 animate-pulse"></i> القلب
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white border-t border-white/10 px-3 md:px-10 py-8">
+        <a href="https://magdyziad.vercel.app" target="_blank"
+            class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p class="text-base sm:text-lg text-gray-400 text-center sm:text-start">
+                <i class="fa-regular fa-copyright"></i>2026 <span class="font-bold text-white">Di Nsw</span> | جميع
+                الحقوق محفوظة
+            </p>
+            <p class="text-base sm:text-lg font-semibold text-gray-400 hover:text-red-600 duration-300 text-center">
+                تصميم الموقع: المبرمج <span class="font-bold">مجدي زياد.</span>
+                اضغط للتواصل
+            </p>
+        </a>
+    </footer>
+    <script type="module" src="js/all-products-page.js"></script>
+</body>
+
+</html>

@@ -2,7 +2,7 @@ import products from './products.js';
 
 let cart = JSON.parse(localStorage.getItem("cart")) || []
 const cartCounter = document.getElementById("cartCounter")
-cartCounter.textContent = cart.length
+cartCounter.textContent = cart.reduce((container, current) => { return container + current.quantity }, 0)
 
 
 const bestSellersContainer = document.getElementById("best-sellers-container")

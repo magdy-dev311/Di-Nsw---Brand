@@ -3,7 +3,7 @@ let products = [
         id: 1,
         img: "images/products/img-1.webp",
         name: "تيشرت اوفر سايز رمادي",
-        price: 700,
+        price: 750,
         discount: 30,
         sizes: ["M", "L", "XL", "2XL"],
         colors: [
@@ -22,12 +22,14 @@ let products = [
         hasDiscount: true,
         isNew: true,
         bestSeller: true,
+        badge:"جديد",
+        hasBadge: true,
     },
 
     {
         id: 2,
         img: "images/products/img-2.webp",
-        name: "تيشرت اوفر سايز اسود",
+        name: "جوي بوي",
         price: 750,
         discount: 15,
         sizes: ["M","L", "XL", "2XL"],
@@ -47,6 +49,8 @@ let products = [
         hasDiscount: true,
         isNew: true,
         bestSeller: true,
+        badge:"جديد",
+        hasBadge: true,
     },
     
     {
@@ -69,9 +73,11 @@ let products = [
         desc: "تيشرت اوفر سايز اسود , افضل خامات القماش",
         material: "ميلتون اسفنجي",
         createdAt: "2026-07-25",
-        hasDiscount: true,
+        hasDiscount: false,
         isNew: true,
         bestSeller: true,
+        badge:"الأكثر طلبا",
+        hasBadge: true,
     },
 
     {
@@ -97,6 +103,8 @@ let products = [
         hasDiscount: true,
         isNew: true,
         bestSeller: true,
+        badge:"جديد",
+        hasBadge: false,
     },
 
     {
@@ -123,9 +131,11 @@ let products = [
         desc: "تيشرت اوفر سايز اسود , افضل خامات القماش",
         material: "قطن 100%",
         createdAt: "2026-07-25",
-        hasDiscount: true,
+        hasDiscount: false,
         isNew: true,
         bestSeller: true,
+        badge:"جديد",
+        hasBadge: true,
     },
 
 ]
