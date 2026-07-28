@@ -173,7 +173,7 @@ addToCartBtn.addEventListener("click", ()=>{
     }
     cart.push(newProduct)
     window.localStorage.setItem("cart", JSON.stringify(cart))
-    cartCounter.textContent = cart.length
+    cartCounter.textContent = cart.reduce((container, current) => { return container + current.quantity }, 0)
     popUpContainer.classList.remove("flex")
     popUpContainer.classList.add("hidden")
 })

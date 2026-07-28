@@ -24,6 +24,7 @@ let products = [
         bestSeller: true,
         badge:"جديد",
         hasBadge: true,
+        category: "تيشرت"
     },
 
     {
@@ -51,6 +52,7 @@ let products = [
         bestSeller: true,
         badge:"جديد",
         hasBadge: true,
+        category: "تيشرت"
     },
     
     {
@@ -73,11 +75,12 @@ let products = [
         desc: "تيشرت اوفر سايز اسود , افضل خامات القماش",
         material: "ميلتون اسفنجي",
         createdAt: "2026-07-25",
-        hasDiscount: false,
+        hasDiscount: true,
         isNew: true,
         bestSeller: true,
         badge:"الأكثر طلبا",
         hasBadge: true,
+        category: "تيشرت"
     },
 
     {
@@ -105,6 +108,7 @@ let products = [
         bestSeller: true,
         badge:"جديد",
         hasBadge: false,
+        category: "تيشرت"
     },
 
     {
@@ -131,11 +135,12 @@ let products = [
         desc: "تيشرت اوفر سايز اسود , افضل خامات القماش",
         material: "قطن 100%",
         createdAt: "2026-07-25",
-        hasDiscount: false,
+        hasDiscount: true,
         isNew: true,
         bestSeller: true,
         badge:"جديد",
         hasBadge: true,
+        category: "تيشرت"
     },
 
 ]

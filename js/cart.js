@@ -240,9 +240,21 @@ document.forms[0].addEventListener("submit", function (e) {
 })
 
 function deleteProduct(id) {
-    if (!confirm("هل انت متاكد من إزالة هذا العنصر")) return
-    cart = cart.filter(p => p.id !== id)
-    localStorage.setItem("cart", JSON.stringify(cart))
-    renderProducts()
-    cartCounter.textContent = cart.reduce((container, current) => { return container + current.quantity }, 0)
+    Swal.fire({
+        title: "هل انت متأكد؟",
+        text: "هل انت متاكد من إزالة هذا العنصر",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "أيوة, احذف",
+        cancelButtonText: "إلغاء",
+        confirmButtonColor: "#dc2626",
+        cancelButtonColor: "#6b7280"
+    }).then((result) => {
+        if (result.isConfirmed) {
+            cart = cart.filter(p => p.id !== id)
+            localStorage.setItem("cart", JSON.stringify(cart))
+            renderProducts()
+            cartCounter.textContent = cart.reduce((container, current) => { return container + current.quantity }, 0)
+        }
+    })
 }

@@ -23,6 +23,8 @@ const productsContainer = document.getElementById("productsContainer")
 const colorsContainer = document.getElementById("colorsContainer")
 const sizesInputsContainer = document.getElementById("sizesInputsContainer")
 
+const searchInput = document.getElementById("searchInput")
+
 const rangeFrom = document.getElementById("rangeFrom")
 const rangeTo = document.getElementById("rangeTo")
 
@@ -104,10 +106,13 @@ function renderProducts(productsArray = products) {
                     <span
                         class="${p.hasBadge ? "" : "hidden"} absolute top-3 right-3 text-2xl font-semibold bg-green-600 rounded-md text-white px-2 ">${p.badge}</span>
                 </div>
-                <div class="mt-5 flex flex-col gap-5">
-                    <div class="flex justify-between items-center px-3">
+                <div class="mt-3 flex flex-col gap-3">
+                    <div class="flex justify-center items-center px-3">
                         <h5 class="text-xl font-bold">${p.name}</h5>
+                    </div>
+                    <div class="flex justify-between ">
                         <span class=" text-xl text-green-600 font-bold">EGP ${p.price - p.price * p.discount / 100}</span>
+                        <span class=" text-xl text-red-600 line-through font-bold">EGP ${p.price}</span>
                     </div>
                     <button data-id="${p.id}"
                         class="add-to-cart flex justify-center items-center text-2xl font-bold py-1 bg-red-600 text-white rounded-lg cursor-pointer hover:bg-red-700 duration-300 w-full">أضف
@@ -136,7 +141,10 @@ document.querySelectorAll("input[name='color']").forEach(i => {
     })
 })
 
+searchInput.addEventListener("input", filterProducts)
+
 function filterProducts() {
+    let searchValue = searchInput.value.trim().toLowerCase()
     let selectedSizes = Array.from(document.querySelectorAll("input[name='size']:checked")).map(input => input.id)
     let selectedColors = Array.from(document.querySelectorAll("input[name='color']:checked")).map(i => i.id)
 
@@ -144,7 +152,13 @@ function filterProducts() {
         return (
             p.price >= +minRangeInput.value && p.price <= +maxRangeInput.value &&
             (!selectedSizes.length || selectedSizes.some(size => p.sizes.includes(size))) &&
-            (!selectedColors.length || selectedColors.some(color => p.colors.some(c => c.name === color)))
+            (!selectedColors.length || selectedColors.some(color => p.colors.some(c => c.name === color))) &&
+            (
+                p.name.toLowerCase().includes(searchValue) ||
+                p.desc.toLowerCase().includes(searchValue) ||
+                p.category.toLowerCase().includes(searchValue) ||
+                p.material.toLowerCase().includes(searchValue)
+            )
         )
     })
 
@@ -162,6 +176,8 @@ clearFilter.addEventListener("click", () => {
 
     document.querySelectorAll("input[type='checkbox']")
         .forEach(input => input.checked = false)
+
+    searchInput.value = ""
 
     filterProducts()
 })
@@ -226,7 +242,7 @@ addToCartBtn.addEventListener("click", () => {
     }
     cart.push(newProduct)
     window.localStorage.setItem("cart", JSON.stringify(cart))
-    cartCounter.textContent = cart.length
+    cartCounter.textContent = cart.reduce((container, current) => { return container + current.quantity }, 0)
     popUpContainer.classList.remove("flex")
     popUpContainer.classList.add("hidden")
 })

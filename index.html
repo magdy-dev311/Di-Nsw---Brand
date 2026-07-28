@@ -136,6 +136,10 @@
                 </li>
                 <li
                     class="hover:text-red-600 duration-300 relative after:absolute after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[2.5px] after:bg-red-600 after:rounded-full after:duration-300 hover:after:w-full">
+                    <a href="all-products.html">جميع المنتجات</a>
+                </li>
+                <li
+                    class="hover:text-red-600 duration-300 relative after:absolute after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[2.5px] after:bg-red-600 after:rounded-full after:duration-300 hover:after:w-full">
                     <a href="#about-us">من نحن</a>
                 </li>
                 <li
@@ -170,6 +174,10 @@
             <li class="hover:text-red-600 duration-300 text-start">
                 <a href="#latest-products">أحدث المنتجات</a>
             </li>
+            <li
+                class="hover:text-red-600 duration-300 relative after:absolute after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[2.5px] after:bg-red-600 after:rounded-full after:duration-300 hover:after:w-full">
+                <a href="all-products.html">جميع المنتجات</a>
+            </li>
             <li class="hover:text-red-600 duration-300 text-start">
                 <a href="#about-us">من نحن</a>
             </li>
@@ -184,11 +192,17 @@
         <img src="images/hero.png" class="w-[500px] max-w-full" alt="Logo">
         <h1 class="text-3xl text-center sm:text-5xl font-bold">مرحبا بك في <span class="text-red-600">Di Nsw</span></h1>
         <p class="text-xl text-center sm:text-3xl font-semibold text-gray-300">ملابس أكثر تميزًا لأشخاص أكثر تميزًا.</p>
-        <a href="#latest-products"
-            class="bg-red-600 text-xl sm:text-3xl font-bold p-3 rounded-lg cursor-pointer hover:bg-red-700 duration-300 flex items-center gap-1">
-            <span>استكشف الاحدث</span>
-            <i class="fa-solid fa-arrow-down animate-bounce"></i>
-        </a>
+        <div class="flex flex-col md:flex-row gap-5">
+            <a href="#latest-products"
+                class="bg-red-600 text-xl sm:text-3xl font-bold px-3 py-[10px] rounded-lg cursor-pointer hover:bg-transparent border-2 border-red-600 hover:border-red-600 hover:text-red-500 duration-300 flex items-center gap-1">
+                <span>استكشف الاحدث</span>
+                <i class="fa-solid fa-arrow-down animate-bounce"></i>
+            </a>
+            <a href="all-products.html" target="_blank"
+                class="border-2 text-red-500 text-center hover:bg-red-500 hover:text-white border-red-600 text-xl sm:text-3xl font-bold px-3 py-[10px] rounded-lg cursor-pointer duration-300">
+                <span>جميع المنتجات</span>
+            </a>
+        </div>
     </section>
 
     <!-- Latest Products -->
